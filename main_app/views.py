@@ -2,8 +2,9 @@ from django.shortcuts import render
 from .models import Sushi
 
 # Add the Sushi class & list and view function below the imports
-# class Sushi:  # Note that parens are optional if not inheriting from another class
-"""   def __init__(self, name, type, description, price):
+# commented for archive of original code
+""" class Sushi:  # Note that parens are optional if not inheriting from another class
+      def __init__(self, name, type, description, price):
     self.name = name
     self.type = type
     self.description = description
