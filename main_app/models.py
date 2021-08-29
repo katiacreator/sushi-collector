@@ -7,4 +7,5 @@ class Sushi(models.Model):
   description = models.TextField(max_length=250)
   price = models.IntegerField(default=0)
   
-  
+  def __str__(self):
+    return self.name

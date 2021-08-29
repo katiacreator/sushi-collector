@@ -265,14 +265,8 @@ nav li {
       background: transparent;
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
-      border: solid red 5px;
+      /* border: solid red 5px; */
     }
     
-    .header-logo-container {
-      /* background: transparent;
-      -webkit-backdrop-filter: blur(3px);
-      backdrop-filter: blur(3px);
-      border: solid magenta 5px; */
-    }
   }
 }

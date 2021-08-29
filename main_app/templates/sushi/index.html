@@ -13,25 +13,18 @@
 <section class="card-container">
   {% for sushi in rolls %}
   <div class="card">
-    {% comment %} <a href="{% url 'sushi_detail' sushi.id %}"> {% endcomment %}
+    <a href="/sushi/{{ sushi.id }}">
       <div class="card-content">
         <div class="card-img-container">
-          <img
-            src="{% static 'images/sushi.svg' %}"
-            alt="sushi logo icon"
-          />
+          <img src="{% static 'images/sushi.svg' %}" alt="sushi logo icon" />
         </div>
         <h2 class="card-title">{{ sushi.name }}</h2>
-      
-       <p>{{ sushi.type }}</p>
-
+        <p>{{ sushi.type }}</p>
         <p>{{ sushi.description }}</p>
-
         <p>Price: $ {{ sushi.price }}</p>
       </div>
-    {% comment %} </a> {% endcomment %}
+    </a>
   </div>
   {% endfor %}
 </section>
-
 {% endblock %}

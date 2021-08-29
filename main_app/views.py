@@ -29,3 +29,7 @@ def about(request):
 def sushi_index(request):
   rolls = Sushi.objects.all()
   return render(request, 'sushi/index.html', { 'rolls': rolls})
+
+def sushi_detail(request, sushi_id):
+  sushi = Sushi.objects.get(id=sushi_id)
+  return render(request, 'sushi/detail.html', { 'sushi': sushi })
