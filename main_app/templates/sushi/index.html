@@ -7,11 +7,7 @@
 {% endblock %} {% block content %}
 
 <section class="page-header">
-  <h1>Sushi List</h1>
-  <img src="{% static 'images/sardine-sushi.svg' %}" alt="sardine sushi" />
-  <img src="{% static 'images/salmon-roe-sushi.svg' %}" alt="salmon-roe-sushi" />
-  <img src="{% static 'images/tuna-plate.svg' %}" alt="A plate of tuna sushi" />
-  {% comment %} <img src="{% static 'images/sushi-in-box.svg' %}" alt="A sushi in a box" /> {% endcomment %}
+  <h1>Sushi Menu</h1>
 </section>
 
 <section class="card-container">
@@ -21,17 +17,17 @@
       <div class="card-content">
         <div class="card-img-container">
           <img
-            src="{% static 'images/sushi-logo-icon.svg' %}"
+            src="{% static 'images/sushi.svg' %}"
             alt="sushi logo icon"
           />
         </div>
         <h2 class="card-title">{{ sushi.name }}</h2>
       
-       <p><small>{{ sushi.type }}</small></p>
+       <p>{{ sushi.type }}</p>
 
-        <p><small>{{ sushi.description }}</small></p>
+        <p>{{ sushi.description }}</p>
 
-        <p>Price: $ <small>{{ sushi.price }}</small></p>
+        <p>Price: $ {{ sushi.price }}</p>
       </div>
     {% comment %} </a> {% endcomment %}
   </div>
