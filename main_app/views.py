@@ -1,22 +1,18 @@
 from django.shortcuts import render
 from .models import Sushi
+# from time import sleep
+# import sys
 
-# Add the Sushi class & list and view function below the imports
-# commented for archive of original code
-""" class Sushi:  # Note that parens are optional if not inheriting from another class
-      def __init__(self, name, type, description, price):
-    self.name = name
-    self.type = type
-    self.description = description
-    self.price = price """
 
-""" rolls = [
-  Sushi('California', 'sushi roll', 'cucumber, avocado, and crab', 8),
-  Sushi('Tuna', 'sashimi', 'delicious', 10),
-  Sushi('Cucumber', 'sushi roll', 'vegan friendly', 4),
-  Sushi('Salmon', 'nigiri', 'sustainably caught salmon', 8),
-  Sushi('Captain Crunch Crab', 'sushi roll', 'epic, delicious treat, softshell crab battered in captain crunch batter and fried', 10)
-] """
+# def typewriter():
+#   sushi_words = 'California sushi roll cucumber avocado crab tuna nigiri delicious cucumber roll vegan vegetarian salmon nigiri salmon sushi  softshell crab' 
+#   for letter in sushi_words:
+#       sleep(0.08) # In seconds
+#       sys.stdout.write(letter)
+#       sys.stdout.flush()
+      # return
+
+# typewriter()-figure out where this should live to make it render on the home page
 
 #define the home view
 def home(request):
@@ -33,3 +29,7 @@ def sushi_index(request):
 def sushi_detail(request, sushi_id):
   sushi = Sushi.objects.get(id=sushi_id)
   return render(request, 'sushi/detail.html', { 'sushi': sushi })
+
+# def additions_index(request, additions):
+#   additions = Addition.objects.all()
+#   return render(request, 'additions/index.html', { 'additions': additions})

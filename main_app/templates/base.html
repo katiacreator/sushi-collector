@@ -17,16 +17,19 @@
   <body>
     <header>
       <div class="header-logo-container">
-        <a href="/">
+        <a href="{% url 'home'%}">
           <img src="{% static 'images/sushi.svg' %}" alt="The Sushi Collector Logo" />
         </a>
       </div>
       <nav>
         <ul>
-          <li><a href="/sushi">Sushi</a></li>
+          <li><a href="{% url 'sushi_index'%}">Sushi</a></li>
         </ul>
         <ul>
-          <li><a href="/about">About</a></li>
+          <li><a href="{% url 'home'%}">Add-Ons</a></li>
+        </ul>
+        <ul>
+          <li><a href="{% url 'about'%}">About</a></li>
         </ul>
       </nav>
     </header>
