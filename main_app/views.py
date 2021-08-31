@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Sushi
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # from time import sleep
 # import sys
 
@@ -34,6 +34,14 @@ def sushi_detail(request, sushi_id):
 class SushiCreate(CreateView):
   model = Sushi
   fields = '__all__'
+
+class SushiUpdate(UpdateView):
+  model = Sushi
+  fields = ['type', 'description', 'price']
+
+class SushiDelete(DeleteView):
+  model = Sushi
+  success_url = '/sushi/'
 
 # def additions_index(request, additions):
 #   additions = Addition.objects.all()
