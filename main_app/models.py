@@ -14,3 +14,16 @@ class Sushi(models.Model):
 
   def get_absolute_url(self):
     return reverse('sushi_detail', kwargs={'sushi_id': self.id})
+
+# Add the Side_Dishes model
+class Side(models.Model):
+  name = models.CharField(max_length=50)
+  description = models.TextField(max_length=250)
+  isVegan = models.BooleanField(default=False)
+  price = models.IntegerField(default=0)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('sides_detail', kwargs={'pk': self.id})
