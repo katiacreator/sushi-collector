@@ -4,6 +4,7 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   height: 100%;
+  border: solid red 10px;
 }
 
 main > section {
@@ -13,6 +14,7 @@ main > section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border: solid blue 10px;
 }
 
 .header-logo-container {

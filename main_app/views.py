@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Sushi, Side
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 # from time import sleep
 # import sys
 
@@ -60,11 +61,16 @@ class SideCreate(CreateView):
   model = Side
   fields = '__all__'
 
-"""
+class SideList(ListView):
+  model = Side
+
+class SideDetail(DetailView):
+  model = Side
+
 class SideUpdate(UpdateView):
   model = Side
   fields = ['isVegan', 'description', 'price']
 
 class SideDelete(DeleteView):
   model = Side
-  success_url = '/sides/' """
+  success_url = '/sides/'

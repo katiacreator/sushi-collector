@@ -1,4 +1,4 @@
-.sushi-container {
+.side-container {
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.sushi-img {
+.side-img {
   width: 75%;
   max-width: 350px;
 }
@@ -16,11 +16,11 @@
   border-radius: var(--card-border-radius);
 }
 
-.sushi-details {
+.side-details {
   width: 98%;
 }
 
-.sushi-actions {
+.side-actions {
   margin-top: 20px;
 }
 
@@ -72,24 +72,24 @@
   color: var(--submit);
 }
 
-.sushi-details h1 {
+.side-details h1 {
   font-size: var(--font-xxl);
   margin: 15px 0 3px;
 }
 
-.sushi-details h2 {
+.side-details h2 {
   font-size: var(--font-xl);
   margin: 0 0 10px;
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.sushi-details h3 {
+.side-details h3 {
   margin: 20px 0 10px;
   font-size: var(--font-l);
 }
 
-.sushi-details p {
+.side-details p {
   font-size: var(--font-reg);
   margin: 5px 0;
 }
@@ -188,14 +188,14 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .sushi-container {
+  .side-container {
     padding: 35px 30px;
     flex-direction: row;
     align-items: center;
     justify-content: start;
   }
 
-  .sushi-img {
+  .side-img {
     width: 25%;
     max-width: 250px;
     margin-right: 25px;

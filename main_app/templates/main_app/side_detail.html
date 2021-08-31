@@ -12,8 +12,12 @@
   </div>
   <div class="side-details">
     <h1>{{ side.name }}</h1>
-    <p>Vegan?: {{ side.isVegan}}</p>
-    <p>Description: {{ side.description }}</p>
+    {% if side.isVegan %}
+        <p style="color: green">Vegan*</p>
+        <p>{{ side.description }}</p>
+        {% else %}
+        <p>{{ side.description }}</p>
+        {% endif %}
     <p>Price: $ {{ side.price }}</p>
     <div class="side-actions">
       <a href="{% url 'side_update' side.id %}" class="btn warn">Edit</a>

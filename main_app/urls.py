@@ -9,10 +9,13 @@ urlpatterns = [
   path('sushi/create/', views.SushiCreate.as_view(), name='sushi_create'),
   path('sushi/<int:pk>/update/', views.SushiUpdate.as_view(), name='sushi_update'),
   path('sushi/<int:pk>/delete/', views.SushiDelete.as_view(), name='sushi_delete'),
+
   #Side routes begins here
   path('sides/', views.sides_index, name='sides_index'),
 
-  path('sides/create/', views.SideCreate.as_view(), name='side_create'),
+  path('sides/create/', views.SideCreate.as_view(), name='sides_create'),
 
-  path('sides/<int:side_id>', views.sides_detail, name='sides_detail'),
+  path('sides/<int:pk>/', views.SideDetail.as_view(), name='sides_detail'),
+  path('sides/<int:pk>/update', views.SideUpdate.as_view(), name='side_update'),
+  path('sides/<int:pk>/delete', views.SideDelete.as_view(), name='side_delete'),
 ]
