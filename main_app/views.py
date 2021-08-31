@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Sushi
+from .models import Sushi, Side
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # from time import sleep
 # import sys
@@ -46,3 +46,25 @@ class SushiDelete(DeleteView):
 # def additions_index(request, additions):
 #   additions = Addition.objects.all()
 #   return render(request, 'additions/index.html', { 'additions': additions})
+
+#Side views begins here
+def sides_index(request):
+  sides = Side.objects.all()
+  return render(request, 'sides/index.html', { 'sides': sides})
+
+def sides_detail(request, side_id):
+  side = Side.objects.get(id=side_id)
+  return render(request, 'sides/detail.html', { 'side': side})
+
+class SideCreate(CreateView):
+  model = Side
+  fields = '__all__'
+
+"""
+class SideUpdate(UpdateView):
+  model = Side
+  fields = ['isVegan', 'description', 'price']
+
+class SideDelete(DeleteView):
+  model = Side
+  success_url = '/sides/' """

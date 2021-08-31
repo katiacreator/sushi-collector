@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/side-detail.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="side-container">
+  <div class="side-img">
+    <img src="{% static 'images/sushi.svg' %}" alt="sushi logo icon" />
+  </div>
+  <div class="side-details">
+    <h1>{{ side.name }}</h1>
+    <p>Vegan?: {{ side.isVegan}}</p>
+    <p>Description: {{ side.description }}</p>
+    <p>Price: $ {{ side.price }}</p>
+    <div class="side-actions">
+      <a href="{% url 'side_update' side.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'side_delete' side.id %}" class="btn danger">Delete</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
