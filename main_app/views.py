@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Sushi
+from django.views.generic.edit import CreateView
 # from time import sleep
 # import sys
 
@@ -29,6 +30,10 @@ def sushi_index(request):
 def sushi_detail(request, sushi_id):
   sushi = Sushi.objects.get(id=sushi_id)
   return render(request, 'sushi/detail.html', { 'sushi': sushi })
+
+class SushiCreate(CreateView):
+  model = Sushi
+  fields = '__all__'
 
 # def additions_index(request, additions):
 #   additions = Addition.objects.all()

@@ -6,5 +6,5 @@ urlpatterns = [
   path('about/', views.about, name='about'),
   path('sushi/', views.sushi_index, name='sushi_index'),
   path('sushi/<int:sushi_id>', views.sushi_detail, name='sushi_detail'),
-  # path('additions/', views.additions_index, name='additions_index'),
+  path('sushi/create/', views.SushiCreate.as_view(), name='sushi_create'),
 ]
