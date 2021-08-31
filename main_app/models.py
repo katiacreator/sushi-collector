@@ -18,13 +18,13 @@ class Side(models.Model):
 
 class Sushi(models.Model):
   name = models.CharField(max_length=50)
-  description = models.TextField(max_length=250)
+  description = models.TextField(max_length=250, default='comes with free soy sauce, ginger, and wasabi paste')
   isVegan = models.BooleanField(default=False)
   isVegetarian = models.BooleanField(default=False)
   price = models.IntegerField(default=8)
   # includes = models.CharField(default=0)
     # Add the M:M relationship
-  # sides = models.ManyToManyField(Side)
+  sides = models.ManyToManyField(Side)
 
   def __str__(self):
     return self.name
