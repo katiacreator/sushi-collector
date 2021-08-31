@@ -32,3 +32,18 @@ class Sushi(models.Model):
   def get_absolute_url(self):
     return reverse('sushi_detail', kwargs={'sushi_id': self.id})
 
+class Order(models.Model):
+  name = models.CharField(max_length=50)
+  # description = models.TextField(max_length=250)
+  isVegan = models.BooleanField(default=False)
+  isVegetarian = models.BooleanField(default=False)
+  total = models.IntegerField(default=0)
+  sides = models.ManyToManyField(Side)
+  sushi = models.ManyToManyField(Sushi)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('order_detail', kwargs={'pk': self.id})
+
