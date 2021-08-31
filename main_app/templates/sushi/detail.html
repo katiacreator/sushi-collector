@@ -15,6 +15,7 @@
     <p>Type: {{ sushi.type }}</p>
     <p>Description: {{ sushi.description }}</p>
     <p>Price: $ {{ sushi.price }}</p>
+
     <div class="sushi-actions">
       <a href="{% url 'sushi_update' sushi.id %}" class="btn warn">Edit</a>
       <a href="{% url 'sushi_delete' sushi.id %}" class="btn danger">Delete</a>

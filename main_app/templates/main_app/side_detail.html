@@ -13,11 +13,15 @@
   <div class="side-details">
     <h1>{{ side.name }}</h1>
     {% if side.isVegan %}
-        <p style="color: green">Vegan*</p>
-        <p>{{ side.description }}</p>
-        {% else %}
-        <p>{{ side.description }}</p>
-        {% endif %}
+    <p style="color: green; font-weight: bold">Vegan*</p>
+    {% else %}
+    <p></p>
+    {% endif %} {% if side.isVegetarian %}
+    <p style="color: green">Vegetarian*</p>
+    {% else %}
+    <p></p>
+    {% endif %}
+    <p>{{ side.description }}</p>
     <p>Price: $ {{ side.price }}</p>
     <div class="side-actions">
       <a href="{% url 'side_update' side.id %}" class="btn warn">Edit</a>

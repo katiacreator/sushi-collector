@@ -34,19 +34,16 @@ def sushi_detail(request, sushi_id):
 
 class SushiCreate(CreateView):
   model = Sushi
-  fields = '__all__'
+  fields = ['name', 'description', 'isVegan', 'isVegetarian', 'price']
 
 class SushiUpdate(UpdateView):
   model = Sushi
-  fields = ['type', 'description', 'price']
+  fields = ['name', 'description', 'isVegan', 'isVegetarian', 'price']
 
 class SushiDelete(DeleteView):
   model = Sushi
   success_url = '/sushi/'
 
-# def additions_index(request, additions):
-#   additions = Addition.objects.all()
-#   return render(request, 'additions/index.html', { 'additions': additions})
 
 #Side views begins here
 def sides_index(request):
@@ -69,8 +66,7 @@ class SideDetail(DetailView):
 
 class SideUpdate(UpdateView):
   model = Side
-  fields = ['isVegan', 'description', 'price']
-
+  fields = ['name', 'description', 'isVegan', 'isVegetarian', 'price']
 class SideDelete(DeleteView):
   model = Side
   success_url = '/sides/'
