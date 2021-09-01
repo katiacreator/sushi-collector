@@ -1,11 +1,7 @@
 html {
   box-sizing: border-box;
   background: #000;
-  /* min-height: 500%;
-  background-image: url(images/mahmoud-fawzy-sGPMqwj3N5M-unsplash.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
+ 
   color: white;
   /* border: solid yellow 10px; */
 }
