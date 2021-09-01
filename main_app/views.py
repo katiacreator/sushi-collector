@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Sushi, Side
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -8,23 +8,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-# from time import sleep
-# import sys
-
-
-# def typewriter():
-#   sushi_words = 'California sushi roll cucumber avocado crab tuna nigiri delicious cucumber roll vegan vegetarian salmon nigiri salmon sushi  softshell crab' 
-#   for letter in sushi_words:
-#       sleep(0.08) # In seconds
-#       sys.stdout.write(letter)
-#       sys.stdout.flush()
-      # return
-
-# typewriter()-figure out where this should live to make it render on the home page
 
 class Home(LoginView):
   template_name = 'home.html'
-
 
 def about(request):
   return render(request, 'about.html')
