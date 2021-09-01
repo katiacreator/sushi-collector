@@ -34,24 +34,21 @@
             alt="red chopstick animation"
           ></lottie-player>
         </a>
-        {% comment %} <h1>Sushi!</h1> {% endcomment %}
+        <h1>Sushi!</h1>
       </div>
       <nav>
         <ul>
-          <li><a href="{% url 'sushi_index'%}">Sushi</a></li>
-        </ul>
-        <ul>
-          <li><a href="{% url 'sushi_create'%}">Add Sushi</a></li>
-        </ul>
-        <ul>
-          <li><a href="{% url 'sides_index'%}">Side Dishes</a></li>
-          <ul>
-            <li><a href="{% url 'sides_create'%}">Add A Side Dish</a></li>
-          </ul>
-        </ul>
-        <ul>
-          <li><a href="{% url 'about'%}">About</a></li>
-        </ul>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'sushi_index' %}">Sushi Menu</a></li>
+            <li><a href="{% url 'sides_index' %}">Side Dish Menu</a></li>
+            <li><a href="{% url 'sushi_create' %}">Add A Sushi Roll</a></li>
+            <li><a href="{% url 'sides_create' %}">Add a Side Dish</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'logout' %}">Log out</a></li>
+          {% else %}
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'home' %}">Login</a></li>
+          {% endif %}
       </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>

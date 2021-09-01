@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Add the Side_Dishes model
 class Side(models.Model):
@@ -25,6 +26,7 @@ class Sushi(models.Model):
   # includes = models.CharField(default=0)
     # Add the M:M relationship
   sides = models.ManyToManyField(Side)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return self.name
