@@ -12,7 +12,11 @@
       alt="sushi logo"
     />
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
-    <script defer src="{% static '/scripts.js' %}"></script>
+    <script
+      defer
+      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+    ></script>
+
     {% block head %} {% endblock %}
     <title>Sushi Collector</title>
   </head>
@@ -20,11 +24,17 @@
     <header>
       <div class="header-logo-container">
         <a href="{% url 'home'%}">
-          <img
-            src="{% static 'images/sushi.svg' %}"
-            alt="The Sushi Collector Logo"
-          />
+          <lottie-player
+            src="https://assets5.lottiefiles.com/packages/lf20_8Cmt76.json"
+            background="transparent"
+            speed="1"
+            style="width: 100px; height: 100px"
+            hover
+            loop
+            alt="red chopstick animation"
+          ></lottie-player>
         </a>
+        {% comment %} <h1>Sushi!</h1> {% endcomment %}
       </div>
       <nav>
         <ul>
@@ -35,9 +45,9 @@
         </ul>
         <ul>
           <li><a href="{% url 'sides_index'%}">Side Dishes</a></li>
-        <ul>
-          <li><a href="{% url 'sides_create'%}">Add A Side Dish</a></li>
-        </ul>
+          <ul>
+            <li><a href="{% url 'sides_create'%}">Add A Side Dish</a></li>
+          </ul>
         </ul>
         <ul>
           <li><a href="{% url 'about'%}">About</a></li>
