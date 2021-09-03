@@ -14,13 +14,9 @@
     <h1>{{ sushi.name }}</h1>
     {% if sushi.isVegan %}
     <p style="color: green; font-weight: bold">Vegan*</p>
-    {% else %}
-    <p></p>
-    {% endif %} {% if sushi.isVegetarian %}
-    <p style="color: green">Vegetarian*</p>
-    {% else %}
-    <p></p>
-    {% endif %}
+    {%endif%} {% if sushi.isVegetarian %}
+    <p style="color: green; font-weight: bold">Vegetarian*</p>
+    {%endif%}
     <p>Description: {{ sushi.description }}</p>
     <p>Price: $ {{ sushi.price }}</p>
 

@@ -19,7 +19,9 @@
           <img src="{% static 'images/sushi.svg' %}" alt="sushi logo icon" />
         </div>
         <h2 class="card-title">{{ sushi.name }}</h2>
-        {% if sushi.isVegan %}
+        {% if sushi.isVegan %} <p style="color: green; font-weight: bold">Vegan*</p> {%endif%} 
+        {% if sushi.isVegetarian %} <p style="color: green; font-weight: bold">Vegetarian*</p> {%endif%} 
+       {% comment %}  {% if sushi.isVegan %}
         <p style="color: green; font-weight: bold">Vegan*</p>
         {% else %}
         <p></p>
@@ -27,7 +29,7 @@
         <p style="color: green">Vegetarian*</p>
         {% else %}
         <p></p>
-        {% endif %}
+        {% endif %} {% endcomment %}
         <p>{{ sushi.description }}</p>
         <p>Price: $ {{ sushi.price }}</p>
       </div>
