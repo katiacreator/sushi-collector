@@ -29,6 +29,7 @@
     <div class="subsection-title">
       <h2>Additional Sides</h2>
     </div>
+      <h3>Add Your Favorite Side Dish to go along with this sushi!</h3>
     <div class="subsection-content">
       {% if sushi.sides.count %}
         {% for side in sushi.sides.all %}
@@ -66,7 +67,7 @@
             <a href="{% url 'sides_detail' side.id %}">
               <p>{{ side.name }}</p>
             </a>
-            <form action="" method="post">
+            <form action="{% url 'add_side' sushi.id side.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn submit">Add side</button>
             </form>
@@ -74,7 +75,7 @@
         {% endfor %}
       {% else %}
         <p class="all-sides">
-          {{sushi.name}} already has all the available sides 🥳
+          You have added all the available sides!  
         </p>
       {% endif %}
     </div>

@@ -24,7 +24,7 @@
   margin-top: 20px;
 }
 
-.feedings-toy-container {
+.feedings-side-container {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
@@ -41,7 +41,7 @@
   margin: 0 8px;
 }
 
-.toy-container {
+.side-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -56,19 +56,19 @@
 
 .unfed,
 .fed,
-.no-toys,
-.all-toys {
+.no-sides,
+.all-sides {
   margin: 0;
   font-weight: bold;
 }
 
 .unfed,
-.no-toys {
+.no-sides {
   color: var(--danger);
 }
 
 .fed,
-.all-toys {
+.all-sides {
   color: var(--submit);
 }
 
@@ -94,7 +94,7 @@
   margin: 5px 0;
 }
 
-.feedings-toy-container > section {
+.feedings-side-container > section {
   width: 80%;
   min-width: 360px;
   border: var(--borders);
@@ -116,14 +116,15 @@
   margin-left: 16px;
 }
 
-.feedings h2,
-.toys h2 {
+
+.sides h2 {
   font-size: 3.2rem;
   margin: 0;
+  
 }
 
-.feedings h3,
-.toys h3 {
+
+.sides h3 {
   font-size: var(--font-xl);
   margin: 10px 0;
 }
@@ -132,6 +133,7 @@
 .subsection-content input,
 .subsection-content select {
   font-size: var(--font-l);
+  
 }
 
 .subsection-content input,
@@ -158,20 +160,18 @@
   border-bottom: rgb(36, 116, 248) solid 2px;
 }
 
-.feedings tr:nth-child(even) {
-  background-color: #f3f3fd;
-}
-
-.toy-container p {
+.side-container p {
   margin: 12px 0;
+  
 }
 
-.toy-container a {
+.side-container a {
   text-decoration: none;
   color: #111;
+  border: red solid 3px;
 }
 
-.toy-container .btn {
+.side-container .btn {
   padding: 3px 10px;
   margin-left: 10px;
 }
@@ -201,19 +201,19 @@
     margin-right: 25px;
   }
 
-  .feedings-toy-container {
+  .feedings-side-container {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
   }
 
-  .feedings-toy-container > section {
+  .feedings-side-container > section {
     width: 45%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .feedings-toy-container {
+  .feedings-side-container {
     padding: 0 40px;
   }
 }

@@ -83,7 +83,6 @@ def add_side(request, sushi_id, side_id):
   Sushi.objects.get(id=sushi_id).sides.add(side_id)
   return redirect('sushi_detail', sushi_id=sushi_id)
 
-
 def signup(request):
   error_message = ''
   if request.method == 'POST':
