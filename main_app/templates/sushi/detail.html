@@ -29,7 +29,6 @@
     <div class="subsection-title">
       <h2>Additional Sides</h2>
     </div>
-    <h3>{{ sushi.name }}'s sides</h3>
     <div class="subsection-content">
       {% if sushi.sides.count %}
         {% for side in sushi.sides.all %}
@@ -47,9 +46,37 @@
         <p class="no-sides">No additional sides added at this time </p>
       {% endif %}
     </div>
-    <h3>Available sides</h3>
+    <h3>Available Sides</h3>
     <div class="subsection-content">
       {% comment %} We'll display available sides here {% endcomment %}
+      {% if sides.count %}
+        {% for side in sides.all %}
+          <div class="side-container">
+            <div 
+              class="color-block"
+            >
+            <lottie-player
+            src="https://assets5.lottiefiles.com/packages/lf20_8Cmt76.json"
+            background="transparent"
+            speed="1"
+            style="width: 50px; height: 50px"
+            alt="red chopsticks"
+          ></lottie-player>
+            </div>
+            <a href="{% url 'sides_detail' side.id %}">
+              <p>{{ side.name }}</p>
+            </a>
+            <form action="" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Add side</button>
+            </form>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="all-sides">
+          {{sushi.name}} already has all the available sides 🥳
+        </p>
+      {% endif %}
     </div>
   </section>
 </div>

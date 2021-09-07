@@ -23,16 +23,21 @@ def sushi_index(request):
 @login_required
 def sushi_detail(request, sushi_id):
   sushi = Sushi.objects.get(id=sushi_id)
-  return render(request, 'sushi/detail.html', { 'sushi': sushi })
+  # Get the sides the sushi doesn't have
+  sides_sushi_doesnt_have = Side.objects.exclude(id__in = sushi.sides.all().values_list('id'))
+  return render(request, 'sushi/detail.html', {
+    # Add the sides to be displayed
+    'sushi': sushi, 'sides': sides_sushi_doesnt_have
+  })
 
 class SushiCreate(LoginRequiredMixin, CreateView):
   model = Sushi
   fields = ['name', 'description', 'isVegan', 'isVegetarian', 'price']
     # This inherited method is called when a
-  # valid cat form is being submitted
+  # valid sushi form is being submitted
   def form_valid(self, form):
     # Assign the logged in user (self.request.user)
-    form.instance.user = self.request.user  # form.instance is the cat
+    form.instance.user = self.request.user  # form.instance is the sushi
     # Let the CreateView do its job as usual
     return super().form_valid(form)
 
@@ -73,6 +78,11 @@ class SideUpdate(LoginRequiredMixin,UpdateView):
 class SideDelete(LoginRequiredMixin,DeleteView):
   model = Side
   success_url = '/sides/'
+
+def add_side(request, sushi_id, side_id):
+  Sushi.objects.get(id=sushi_id).sides.add(side_id)
+  return redirect('sushi_detail', sushi_id=sushi_id)
+
 
 def signup(request):
   error_message = ''

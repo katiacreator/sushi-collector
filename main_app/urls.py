@@ -16,6 +16,9 @@ urlpatterns = [
   path('sides/<int:pk>/', views.SideDetail.as_view(), name='sides_detail'),
   path('sides/<int:pk>/update', views.SideUpdate.as_view(), name='side_update'),
   path('sides/<int:pk>/delete', views.SideDelete.as_view(), name='side_delete'),
+
+  #associate side dishe with a sushi
+  path('sushi/<int:sushi_id>/add_side/<int:side_id>/', views.add_side, name='add_side'),
   #Signup routes start here
   path('accounts/signup/', views.signup, name='signup'),
 ]
