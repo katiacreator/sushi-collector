@@ -25,6 +25,34 @@
       <a href="{% url 'sushi_delete' sushi.id %}" class="btn danger">Delete</a>
     </div>
   </div>
+  <section class="sides">
+    <div class="subsection-title">
+      <h2>Additional Sides</h2>
+    </div>
+    <h3>{{ sushi.name }}'s sides</h3>
+    <div class="subsection-content">
+      {% if sushi.sides.count %}
+        {% for side in sushi.sides.all %}
+          <div class="side-container">
+            <div 
+              class="color-block"
+              style="background-color: {{ side.color }}"
+            ></div>
+            <a href="{% url 'sides_detail' side.id %}">
+              <p>{{ side.name }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-sides">No additional sides added at this time </p>
+      {% endif %}
+    </div>
+    <h3>Available sides</h3>
+    <div class="subsection-content">
+      {% comment %} We'll display available sides here {% endcomment %}
+    </div>
+  </section>
+</div>
 </section>
 
 {% endblock %}
